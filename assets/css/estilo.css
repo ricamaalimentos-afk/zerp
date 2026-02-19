@@ -1,0 +1,7 @@
+body { font-size: 0.9rem; }
+.card-body { overflow-x: auto; }
+.table td, .table th { vertical-align: middle; }
+@media (max-width: 768px) {
+  .sidebar { width: 100% !important; min-height: auto; }
+  .form-row > .col, .form-row > [class*="col-"] { margin-bottom: 8px; }
+}

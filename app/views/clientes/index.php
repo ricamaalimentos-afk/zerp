@@ -1,0 +1,8 @@
+<h1 class="h3 mb-3">Clientes</h1>
+<form method="post" class="card card-body mb-3">
+<div class="form-row"><input name="nome_razao_social" class="form-control col" placeholder="Nome/Razão Social" required><input name="apelido_empresa" class="form-control col" placeholder="Apelido/Empresa"><input name="cpf_cnpj" class="form-control col" placeholder="CPF/CNPJ"></div>
+<div class="form-row mt-2"><input name="cep" class="form-control col campo-cep" placeholder="CEP"><input name="endereco" class="form-control col campo-endereco" placeholder="Endereço"><input name="bairro" class="form-control col campo-bairro" placeholder="Bairro"></div>
+<div class="form-row mt-2"><input name="cidade" class="form-control col campo-cidade" placeholder="Cidade"><input name="uf" class="form-control col campo-uf" placeholder="UF"><input name="telefone" class="form-control col" placeholder="Telefone"></div>
+<div class="form-row mt-2"><input name="whatsapp" class="form-control col" placeholder="Whatsapp"><input name="email" class="form-control col" placeholder="E-mail"><select name="ativo" class="form-control col"><option value="1">Ativo</option><option value="0">Inativo</option></select></div>
+<button class="btn btn-primary mt-2">Salvar</button></form>
+<table class="table table-striped tabela-dados"><thead><tr><th>ID</th><th>Nome</th><th>Documento</th><th>Cidade/UF</th><th></th></tr></thead><tbody><?php foreach($registros as $r):?><tr><td><?=$r['id']?></td><td><?=$r['nome_razao_social']?></td><td><?=$r['cpf_cnpj']?></td><td><?=$r['cidade']?>/<?=$r['uf']?></td><td><a class="btn btn-sm btn-danger" href="<?=$config['app']['url_base']?>/cadastros/clientes/excluir/<?=$r['id']?>">Excluir</a></td></tr><?php endforeach;?></tbody></table>

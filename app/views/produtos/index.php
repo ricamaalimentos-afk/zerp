@@ -1,0 +1,8 @@
+<h1 class="h3 mb-3">Produtos</h1>
+<form method="post" class="card card-body mb-3">
+<div class="form-row"><input name="descricao" class="form-control col" placeholder="Descrição" required><input name="descricao_resumida" class="form-control col" placeholder="Descrição resumida"><input name="unidade_medida" class="form-control col" placeholder="Unidade"></div>
+<div class="form-row mt-2"><input name="marca" class="form-control col" placeholder="Marca"><input name="codigo_barras" class="form-control col" placeholder="Código de barras"><input name="ncm" class="form-control col" placeholder="NCM"></div>
+<div class="form-row mt-2"><input name="aliquota_icms" class="form-control col" placeholder="Aliq ICMS"><input name="aliquota_pis" class="form-control col" placeholder="Aliq PIS"><input name="aliquota_cofins" class="form-control col" placeholder="Aliq COFINS"></div>
+<div class="form-row mt-2"><input name="preco_venda" class="form-control col" placeholder="Preço venda"><input name="validade_dias" class="form-control col" placeholder="Validade dias"><select name="ativo" class="form-control col"><option value="1">Ativo</option><option value="0">Inativo</option></select></div>
+<button class="btn btn-primary mt-2">Salvar</button></form>
+<table class="table tabela-dados"><thead><tr><th>ID</th><th>Descrição</th><th>Preço</th><th></th></tr></thead><tbody><?php foreach($registros as $r):?><tr><td><?=$r['id']?></td><td><?=$r['descricao']?></td><td>R$ <?=number_format((float)$r['preco_venda'],2,',','.')?></td><td><a class="btn btn-sm btn-danger" href="<?=$config['app']['url_base']?>/cadastros/produtos/excluir/<?=$r['id']?>">Excluir</a></td></tr><?php endforeach;?></tbody></table>

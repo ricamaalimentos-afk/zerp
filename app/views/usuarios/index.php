@@ -1,0 +1,7 @@
+<h1 class="h3 mb-3">Usuários</h1>
+<form method="post" class="card card-body mb-3">
+<div class="form-row"><input name="nome" class="form-control col" placeholder="Nome" required><input name="apelido" class="form-control col" placeholder="Apelido"><input name="email" type="email" class="form-control col" placeholder="E-mail" required></div>
+<div class="form-row mt-2"><input name="senha" type="password" class="form-control col" placeholder="Senha" required><select name="nivel" class="form-control col"><option value="admin">Admin</option><option value="vendedor">Vendedor</option></select><input name="comissao" class="form-control col" placeholder="Comissão %"></div>
+<div class="form-row mt-2"><input name="limite_desconto" class="form-control col" placeholder="Limite desconto %"><input name="permissoes_menu" class="form-control col" placeholder="Permissões (csv)"><select name="ativo" class="form-control col"><option value="1">Ativo</option><option value="0">Inativo</option></select></div>
+<button class="btn btn-primary mt-2">Salvar</button></form>
+<table class="table table-striped tabela-dados"><thead><tr><th>ID</th><th>Nome</th><th>E-mail</th><th>Nível</th><th>Ativo</th><th></th></tr></thead><tbody><?php foreach($registros as $r):?><tr><td><?=$r['id']?></td><td><?=$r['nome']?></td><td><?=$r['email']?></td><td><?=$r['nivel']?></td><td><?=$r['ativo']?'Sim':'Não'?></td><td><a class="btn btn-sm btn-danger" href="<?=$config['app']['url_base']?>/cadastros/usuarios/excluir/<?=$r['id']?>">Excluir</a></td></tr><?php endforeach;?></tbody></table>
